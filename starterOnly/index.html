@@ -61,52 +61,58 @@
               action="index.html"
               method="get"
               onsubmit="return validate();"
+              id= "form";
             >
               <div
-                class="formData">
-                <label>Prénom</label><br>
+                class="prenom-container formData">
+                <label for="prenom">Prénom</label><br>
                 <input
-                  class="text-control"
+                  class="prenom-text-control text-control"
                   type="text"
-                  id="first"
-                  name="first"
+                  id="prenom"
+                  name="prenom"
                   minlength="2"
                 /><br>
+                <span class="prenom-message"></span>
               </div>
               <div
-                class="formData">
-                <label>Nom</label><br>
+                class="nom-container formData">
+                <label for="nom">Nom</label><br>
                 <input
-                  class="text-control"
+                  class="nom-text-control text-control"
                   type="text"
-                  id="last"
-                  name="last"
+                  id="nom"
+                  name="nom"
                 /><br>
+                <span class="nom-message"></span>
               </div>
               <div
-                class="formData">
-                <label>E-mail</label><br>
+                class="email-container formData">
+                <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
                 /><br>
+                <span class="email-message"></span>
               </div>
               <div
-                class="formData">
-                <label>Date de naissance</label><br>
+                class="birthdate-container formData">
+                <label for="birthdate">Date de naissance</label><br>
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
                 /><br>
+                <span class="birthdate-message"></span>
               </div>
               <div
-                class="formData">
-                <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                class="quantity-container formData">
+                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99"><br>
+                <span class="quantity-message"></span>
               </div>
               <p class="text-label">Quelles villes ?</p>
               <div
@@ -176,11 +182,11 @@
                 <label class="checkbox-label" for="location6">
                   <span class="checkbox-icon"></span>
                   Portland</label
-                >
+                ><br>
               </div>
 
               <div
-                class="formData">
+                class="checkbox-container formData">
                 <input
                   class="checkbox-input"
                   type="checkbox"
@@ -188,22 +194,25 @@
                   checked
                 />
                 <label class="checkbox2-label" for="checkbox1" required>
-                  <span class="checkbox-icon"></span>
+                  <span id="checkbox-icon" class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
+
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
-                  Je Je souhaite être prévenu des prochains évènements.
+                  Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br>
+                <span class="checkbox-message"></span>
               </div>
               <input
                 class="btn-submit"
                 type="submit"
                 class="button"
                 value="C'est parti"
+                id="submit"
               />
             </form>
           </div>

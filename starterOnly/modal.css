@@ -527,3 +527,26 @@ footer {
   }
 }
 
+.error{
+  border: 2px solid red;
+  color:red;
+}
+
+.success{
+  border : 2px solid green;
+  color:green;
+}
+
+.span-class{
+  font-size:12px;
+  color:red;
+}
+
+.error-icon{
+  background:red;
+}
+
+.modal-design{
+  min-height:300px;
+  color:white;
+}
