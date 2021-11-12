@@ -550,3 +550,22 @@ footer {
   min-height:300px;
   color:white;
 }
+
+.form-msg{
+  display:none;
+  padding:2%;
+  justify-content: center;
+  text-align: center;
+}
+
+.form-msg p{
+  color:white;
+  font-size: 18px;
+  justify-content: center;
+  text-align: center;
+}
+
+.form-msg-txt{
+  font-size: 21px;
+  color: #fe142f;
+}

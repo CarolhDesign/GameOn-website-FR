@@ -11,6 +11,7 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const closeBtn = document.querySelector('.close');
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -27,7 +28,10 @@ function closeModal() {
 
 const form = document.getElementById("form");
 
+closeBtn.addEventListener('click' , (e) => {
 
+  closeModal();
+});
 
 form.addEventListener('submit' , (e) => {
   validate();
@@ -48,44 +52,46 @@ const quantity = document.getElementById("quantity");
 const quantityValue = quantity.value.trim();
 const checkbox = document.getElementById("checkbox1");
 const checkboxValue = checkbox.value.trim();
+const formMsg = document.querySelector(".form-msg");
+const formMsgP = formMsg.querySelector("p");
 
 const modalBody = document.querySelector(".modal-body");
-let isValid = 0;
+let isError = 0;
 
   if(prenomValue === ''){
     errorMessage(prenom, "Le champ ne peut pas être vide");
-    isValid = isValid + 1;
+    isError = isError + 1;
   }else if (prenomValue.length < 3){
     errorMessage(prenom, "Le champ doit faire minimum 3 caractères");
-    isValid = isValid + 1;
+    isError = isError + 1;
     }else{
     successMessage(prenom);
   }
 
   if(nomValue === ''){
     errorMessage(nom, "Le champ ne peut pas être vide");
-    isValid = isValid + 1;
+    isError = isError + 1;
     }else if (nomValue.length < 3){
     errorMessage(nom, "Le champ doit faire minimum 3 caractères");
-    isValid = isValid + 1;
+    isError = isError + 1;
   }else {
     successMessage(nom);
   }
 
   if(emailValue === ''){
     errorMessage(email, "Veuillez entrer une adresse email");
-    isValid = isValid + 1;
+    isError = isError + 1;
   }
   else if (!validateEmail(emailValue)){
     errorMessage(email, "Veuillez entrer une adresse mail valide");
-    isValid = isValid + 1;
+    isError = isError + 1;
   }else{
     successMessage(email);
   }
 
   if(birthdateValue === ''){
     errorMessage(birthdate, "Veuillez entrer une date valide");
-    isValid = isValid + 1;
+    isError = isError + 1;
 
   }else{
     successMessage(birthdate);
@@ -93,22 +99,24 @@ let isValid = 0;
 
   if(quantityValue === ''){
     errorMessage(quantity, "Veuillez sélectionner un nombre");
-    isValid = isValid + 1;
+    isError = isError + 1;
     }else{
     successMessage(quantity);    
   }
 
     
   if(checkboxValue.checked == false){
-    isValid = isValid + 1;
+    isError = isError + 1;
         //mettre classe bg rouge
   }else{
     // mettre classe bg vert
   }
 
-  if (isValid == 0){
+  if (isError == 0){
     form.style.display = "none";
     modalBody.className = "modal-body modal-design";
+    formMsg.style.display = "flex";
+    formMsgP.innerHTML = `Merci <span class="form-msg-txt">${prenomValue}</span><br> le message nous a bien été envoyé ! <br> On vous recontactera sur <span class="form-msg-txt">${emailValue}</span>`;
   }
 
 
