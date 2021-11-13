@@ -54,6 +54,7 @@ const checkbox = document.getElementById("checkbox1");
 const checkboxValue = checkbox.value.trim();
 const formMsg = document.querySelector(".form-msg");
 const formMsgP = formMsg.querySelector("p");
+const checkboxIcon = document.querySelector("#checkbox1 .checkbox-icon");
 
 const modalBody = document.querySelector(".modal-body");
 let isError = 0;
@@ -105,11 +106,11 @@ let isError = 0;
   }
 
     
-  if(checkboxValue.checked == false){
+  if(checkbox.checked === false){
     isError = isError + 1;
-        //mettre classe bg rouge
+    checkboxIcon.style.background = "red";
   }else{
-    // mettre classe bg vert
+    checkboxIcon.style.background = "#279e7a";
   }
 
   if (isError == 0){
