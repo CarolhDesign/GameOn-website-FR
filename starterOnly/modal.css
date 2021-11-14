@@ -36,9 +36,11 @@ img {
 }
 .header-logo {
     float: left;
+    margin-bottom:2%;
 }
 .main-navbar {
     float: right;
+    margin-bottom:2%;
 }
 .topnav a {
   float: left;
@@ -50,6 +52,8 @@ img {
   text-decoration: none;
   font-size: 20px;
   font-family: Roboto, sans-serif;
+  top: 0;
+  position: relative;
 }
 
 .topnav a:hover {
@@ -83,22 +87,52 @@ img {
     right: 0;
     top: 0;
   }
+
+  .menu{
+    position: relative;
+    top:50px;
+  }
   .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
   }
+
 }
 
 
 
- @media screen and (max-width: 540px) {
+ @media screen and (max-width: 600px) {
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
     margin-top: -15px;
   }
+  .main-navbar{
+    margin-bottom:10%;
+  }
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 16px;
+  }
+  .menu{
+    position: relative;
+    top:30px;
+  }
+
+  .topnav a {
+    top: 16px;
+    position: relative;
+  }
+
+  .header-logo img{
+    width:200px;
+    padding:2%;
+  }
+  
 } 
 
 main {
@@ -480,9 +514,11 @@ footer {
   margin: 0 20px;
 }
 @media screen and (max-width: 800px) {
-  .topnav{
-    margin-top: 50px;
-  }
+
+  .main-navbar {
+    margin-bottom:9%;
+}
+
   .hero-section {
     display: flex;
     flex-direction: column;
