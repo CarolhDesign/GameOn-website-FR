@@ -62,6 +62,9 @@ let isError = 0;
   if(prenomValue === ''){
     errorMessage(prenom, "Le champ ne peut pas être vide");
     isError = isError + 1;
+  }else if (! isValidField(prenomValue)){
+    errorMessage(prenom, "Le champ ne peut pas contenir de caractères spéciaux");
+    isError = isError + 1;
   }else if (prenomValue.length < 3){
     errorMessage(prenom, "Le champ doit faire minimum 3 caractères");
     isError = isError + 1;
@@ -72,6 +75,9 @@ let isError = 0;
   if(nomValue === ''){
     errorMessage(nom, "Le champ ne peut pas être vide");
     isError = isError + 1;
+    }else if (! isValidField(nomValue)){
+      errorMessage(nom, "Le champ ne peut pas contenir de caractères spéciaux");
+      isError = isError + 1;
     }else if (nomValue.length < 3){
     errorMessage(nom, "Le champ doit faire minimum 3 caractères");
     isError = isError + 1;
@@ -152,7 +158,6 @@ function validateEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 
-function validateField(input){
-  const regex = /^[a-zA-Z]+ [a-zA-Z]+$/;
-  return regex.test(String(input).toLowerCase());
+function isValidField(value) {
+    return /^[a-zA-Z]+ [a-zA-Z]+$/.test(value);
 }
