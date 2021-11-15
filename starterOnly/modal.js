@@ -159,5 +159,6 @@ function validateEmail(email) {
 }
 
 function isValidField(value) {
-    return /^[a-zA-Z]+ [a-zA-Z]+$/.test(value);
+    const reg = /^[a-zA-Z '.-]*$/
+    return reg.test(value);
 }
